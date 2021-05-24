@@ -1,0 +1,68 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>பேச்சு உருவாக்கம்</title>
+    <link rel="icon" type="image/png" href="../static/images/tamil.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="static/css/styles.css" />
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/ui-lightness/jquery-ui.css" rel="stylesheet" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<link href="../static/css/keyboard.css" rel="stylesheet" />
+<script type="text/javascript" src="../static/js/jquery.keyboard.js"></script>
+    <script src="../static/js/jquery.keyboard.extension-typing.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#txtkeyboard').keyboard({
+        autoAccept:true
+    })
+     .addTyping();
+    });
+</script>
+  </head>
+  <body>
+    <div class="quote-container" id="quote-container">
+      <!-- Quote -->
+      <form action = "http://localhost:5000" method = "post">
+      <div class="quote-text">
+          <table>
+<tr>
+<td>  <textarea   placeholder="இங்கு தட்டச்சு செய்யவும்..."  name="text" type="text" id="txtkeyboard" ></textarea></td>
+</tr>
+          </table>
+
+      </div>
+      <!-- Author -->
+      <!--
+      <div class="quote-author">
+        <span id="author"></span>
+      </div>
+      -->
+      <!-- Buttons-->
+        <button class="home-button" id="identify" name="type" value="identify">வாக்கியத்தின் வகையை அடையாளம் காணவும்</button>
+          <button class="home-button" name="type" value="postag">சொல்லிலக்கணக் கூறுகளை அடையாளம் காணவும்</button>
+        <button class="home-button" name="type" value="tts">பேச்சுக்கு மாற்றவும்</button>
+          <button class="home-button" name="type" value="test">மாதிரியைப் பயிற்றுவிக்கவும்</button>
+
+          <button class="home-button" name="type" value="update">மாதிரியைப் புதுப்பிக்கவும்</button>
+      </form>
+    </div>
+
+    <!-- Loader -->
+    <div class="loader" id="loader" hidden></div>
+<!--    Audio-->
+    <audio autoplay src="../output/output.mp3"></audio>
+    <!-- Scripts-->
+    <script>
+    function playInputText() {
+        var text_audio = new Audio("../../output/output.mp3");
+        text_audio.play();
+}
+playInputText()
+</script>
+  </body>
+</html>

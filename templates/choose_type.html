@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>வாக்கியத்தை அடையாளம் காணவும் - பேச்சு உருவாக்கம்</title>
+<link rel="icon" type="image/png" href="../../../static/images/tamil.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../../static/css/styles.css" />
+  </head>
+  <body>
+    <div class="quote-container" id="quote-container">
+      <!-- Quote -->
+      <form action = "http://localhost:5000/save-my-result/{{text}}/{{cont}}" method = "post">
+      <div class="quote-text result-container">
+        <h1 class="result-text">{{text}}</h1>
+          <p class="long-text">வாக்கியத்தின் வகை என்ன? பின்வருவனவற்றிலிருந்து தேர்ந்தெடுக்கவும்.</p>
+          <div>
+              <label class="long-text container" for="exclamatory">வியப்பு  வாக்கியம் (Exclamatory)
+              <input type="radio" name="type" value="exclamatory" id="exclamatory">
+                <span class="checkmark"></span></label><br>
+              <label class="long-text container" for="interrogative">வினா வாக்கியம் (Interrogative)
+              <input type="radio" name="type" value="interrogative" id="interrogative">
+                <span class="checkmark"></span></label><br>
+              <label class="long-text container" for="declarative">சாதாரண (அ) உறுதிமொழி  வாக்கியம் (Declarative)
+              <input type="radio" name="type" value="declarative" id="declarative">
+                <span class="checkmark"></span></label><br>
+              <label class="long-text container" for="imperative">கட்டளை (அ) வேண்டுகோள் வாக்கியம் (Imperative)
+              <input type="radio" name="type" value="imperative" id="imperative">
+                <span class="checkmark"></span></label><br>
+              <label class="long-text container" for="nota">மேற்கூறிய எதுவும் இல்லை (None of the Above)
+              <input type="radio" name="type" value="nota" id="nota">
+                <span class="checkmark"></span></label><br>
+          </div>
+      </div>
+      <!-- Author -->
+      <!--
+      <div class="quote-author">
+        <span id="author"></span>
+      </div>
+      -->
+
+          <button class="correct-btn" id="new-quote1" name="result" value="correct">✅ எனது பதிலைச் சேமிக்கவும்</button>
+
+        </form>
+        <form action ="http://localhost:5000" method="get">
+
+          <button class="home-button" name="home" value="go_to_homepage">🏠 முகப்பு பக்கத்திற்கு செல்லவும்</button>
+
+        </form>
+    </div>
+
+    <!-- Loader -->
+    <div class="loader" id="loader" hidden></div>
+    <!-- Scripts-->
+    <script src="static/js/scripts.js"></script>
+  </body>
+</html>

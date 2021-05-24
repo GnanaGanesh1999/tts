@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+வினா வாக்கியம் (Interrogative) - பேச்சு உருவாக்கம்</title>
+<link rel="icon" type="image/png" href="../../../static/images/tamil.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../../static/css/styles.css" />
+  </head>
+  <body>
+    <div class="quote-container" id="quote-container">
+      <!-- Quote -->
+      <form action = "http://localhost:5000/save/{{text}}/{{cont}}" method = "post">
+      <div class="quote-text result-container">
+        <h1 class="result-title">{{text}}</h1>
+          <h2 class="result-text">- வினா வாக்கியம் (Interrogative)</h2>
+          <p  class="long-text">இவை ஒரு வினாவினைக்  கொண்டிருக்கும் வாக்கியமாகும்  இதன் முடிவில் வினாக்குறி காணப்படும்<span class=""></span></p>
+
+          <div class="button-container">
+              <button class="correct-btn" name="result" value="correct interrogative">✓ சரி</button>
+              <button class="wrong-btn" name="result" value="wrong interrogative">✘ தவறு</button>
+          </div>
+      </div>
+      <!-- Author -->
+      <!--
+      <div class="quote-author">
+        <span id="author"></span>
+      </div>
+      -->
+      <!-- Buttons-->  </form>
+        <form action ="http://localhost:5000" method="get">
+
+          <button class="home-button" id="new-quote1" name="home" value="go_to_homepage">🏠 முகப்பு பக்கத்திற்கு செல்லவும்</button>
+
+        </form>
+    </div>
+
+    <!-- Loader -->
+    <div class="loader" id="loader" hidden></div>
+    <!-- Scripts-->
+    <script src="../static/js/scripts.js"></script>
+  </body>
+</html>
